@@ -1,39 +1,35 @@
+/*************************************************************************
+                           trajet  -  description
+                             -------------------
+    début                : $DATE$
+    copyright            : (C) $YEAR$ par $AUTHOR$
+    e-mail               : $EMAIL$
+*************************************************************************/
+
+//---------- Réalisation de la classe <trajet> (fichier trajet_compose.cpp) ------------
+
+//---------------------------------------------------------------- INCLUDE
+
+//-------------------------------------------------------- Include système
+using namespace std;
+#include <iostream>
+
+//------------------------------------------------------ Include personnel
 #define MAP 
 #include "liste_chainee.h"
 #include <cstring>
-#include <iostream>
-using namespace std;
 
-//Code pour construire une liste chainée 
 
-Liste_chainee::Liste_chainee( ): head(NULL)
-{
-    #ifdef MAP
+//------------------------------------------------------------- Constantes
 
-    cout << "Appel au constructeur par défaut de Liste_chainee" << endl;
+//----------------------------------------------------------------- PUBLIC
 
-    #endif
-}
-
-//Destruction d'une liste chainée
-
-Liste_chainee::~Liste_chainee() //destruction des noeuds alloués dynamiquement dans la méthode append 
-{
-    Noeud* temp = head;
-
-    while(head != NULL)
-{
-    temp = head->next;
-    delete head;
-    head = temp;
-} 
-
-    #ifdef MAP
-
-    cout << "Appel au destructeur de liste chainée " << endl;
-
-    #endif
-}
+//----------------------------------------------------- Méthodes publiques
+// type trajet::Méthode ( liste des paramètres )
+// Algorithme :
+//
+//{
+//} //----- Fin de Méthode
 
 Liste_chainee::Noeud * Liste_chainee::gethead() const
 {
@@ -81,3 +77,43 @@ void Liste_chainee::Afficher(void) const
 }
     return;
 }
+
+
+//-------------------------------------------- Constructeurs - destructeur
+
+
+Liste_chainee::Liste_chainee( ): head(NULL)
+{
+    #ifdef MAP
+
+    cout << "Appel au constructeur par défaut de Liste_chainee" << endl;
+
+    #endif
+}
+
+//Destruction d'une liste chainée
+
+Liste_chainee::~Liste_chainee() //destruction des noeuds alloués dynamiquement dans la méthode append 
+{
+    Noeud* temp = head;
+
+    while(head != NULL)
+{
+    temp = head->next;
+    delete head;
+    head = temp;
+} 
+
+    #ifdef MAP
+
+    cout << "Appel au destructeur de liste chainée " << endl;
+
+    #endif
+}
+
+
+
+//------------------------------------------------------------------ PRIVE
+
+//----------------------------------------------------- Méthodes protégées
+

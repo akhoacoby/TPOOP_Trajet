@@ -1,15 +1,40 @@
+/*************************************************************************
+                           trajet  -  description
+                             -------------------
+    début                : $DATE$
+    copyright            : (C) $YEAR$ par $AUTHOR$
+    e-mail               : $EMAIL$
+*************************************************************************/
+
+//---------- Réalisation de la classe <trajet> (fichier trajet_compose.cpp) ------------
+
+//---------------------------------------------------------------- INCLUDE
+
+//-------------------------------------------------------- Include système
+using namespace std;
+#include <iostream>
+
+//------------------------------------------------------ Include personnel
 #define MAP 
 #include "liste_chainee.h"
 #include "trajet_compose.h"
 #include "trajet.h"
 #include <cstring>
-#include <iostream>
-using namespace std;
 
+
+//------------------------------------------------------------- Constantes
+
+//----------------------------------------------------------------- PUBLIC
+
+//----------------------------------------------------- Méthodes publiques
+// type trajet::Méthode ( liste des paramètres )
+// Algorithme :
+//
+//{
+//} //----- Fin de Méthode
 
 //Méthode Afficher de trajet_compose
  void Trajet_compose::Afficher(void) const
-
 {
     Liste_chainee::Noeud * temp = ListeTC.Liste_chainee::gethead();
 
@@ -18,11 +43,10 @@ using namespace std;
     while(temp->next != NULL)
 {
     temp = temp->next;
+    cout << "intermediaire : " << temp->trajet->getDepart() << endl;
 }
     cout << "Arrivee : " << temp->trajet->getArrivee() << endl;
-    
-    
-    
+      
      //cout << "Depart : " << depart << endl; //affichage de depart au lieu de *depart car *depart donne le premier car
     //cout << "Arrivee : " << arrivee << endl;
 }
@@ -52,7 +76,7 @@ void Trajet_compose::Ajouter(Trajet * trajet)
     return;
 }
 
-
+//-------------------------------------------- Constructeurs - destructeur
 
 
 Trajet_compose::Trajet_compose() //Appel au constructeur de Trajet
@@ -70,4 +94,9 @@ Trajet_compose::~Trajet_compose()
 #endif
 }
 
+
+
+//------------------------------------------------------------------ PRIVE
+
+//----------------------------------------------------- Méthodes protégées
 

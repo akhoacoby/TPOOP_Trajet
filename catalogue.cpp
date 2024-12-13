@@ -1,12 +1,44 @@
+/*************************************************************************
+                           trajet  -  description
+                             -------------------
+    début                : $DATE$
+    copyright            : (C) $YEAR$ par $AUTHOR$
+    e-mail               : $EMAIL$
+*************************************************************************/
+
+//---------- Réalisation de la classe <trajet> (fichier trajet_compose.cpp) ------------
+
+//---------------------------------------------------------------- INCLUDE
+
+//-------------------------------------------------------- Include système
+using namespace std;
+#include <iostream>
+#include <cstring>
+
+//------------------------------------------------------ Include personnel
 #define MAP 
 #define Taille 100
 #include "catalogue.h"
 #include "trajet.h"
 #include "liste_chainee.h"
-#include <cstring>
-#include <iostream>
-using namespace std;
 
+
+//------------------------------------------------------------- Constantes
+
+//----------------------------------------------------------------- PUBLIC
+
+//----------------------------------------------------- Méthodes publiques
+// type trajet::Méthode ( liste des paramètres )
+// Algorithme :
+//
+//{
+//} //----- Fin de Méthode
+
+//Méthode pour afficher le catalogue
+void Catalogue::Afficher(void) const
+{
+    Liste.Afficher(); //Appel de afficher de liste_chainee
+}
 
 
 //Méthode pour ajouter un trajet dans le catalogue
@@ -44,8 +76,6 @@ Liste_chainee & Catalogue::getList()
 } 
 */
 
-
-
 //Méthode pour rechercher un parcours
 
 void Catalogue::search()
@@ -56,8 +86,8 @@ void Catalogue::search()
 
     //Recueil de la ville de départ et d'arrivée
 
-    char  villeDepart[Taille];
-    char  villeArrivee[Taille];
+    char villeDepart[Taille];
+    char villeArrivee[Taille];
     cout << "Rentrer la ville de départ : ";
     cin >> villeDepart;
     
@@ -72,6 +102,8 @@ void Catalogue::search()
 {
     temp->trajet->Afficher();//Affichage du  trajet
     found = true;
+
+
     //Car on peut avoir beaucoup d'affichage pour un meme couple(depart, arrivee) on peut avoir A-B, A-C-B, A-E-B, ...
 }
     temp = temp->next;
@@ -99,13 +131,8 @@ void Catalogue::search()
 }*/
 
 
+//-------------------------------------------- Constructeurs - destructeur
 
-
-//Méthode pour afficher le catalogue
-void Catalogue::Afficher(void) const
-{
-    Liste.Afficher(); //Appel de afficher de liste_chainee
-}
 
 //Construction d'un catalogue
 
@@ -129,3 +156,10 @@ Catalogue::~Catalogue()
 
     #endif
 }
+
+
+
+//------------------------------------------------------------------ PRIVE
+
+//----------------------------------------------------- Méthodes protégées
+

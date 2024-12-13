@@ -1,10 +1,36 @@
-#define MAP 
-#include "trajet_simple.h"
-#include "trajet.h"
-#include <cstring>
-#include <iostream>
-using namespace std;
+/*************************************************************************
+                           trajet  -  description
+                             -------------------
+    début                : $DATE$
+    copyright            : (C) $YEAR$ par $AUTHOR$
+    e-mail               : $EMAIL$
+*************************************************************************/
 
+//---------- Réalisation de la classe <trajet> (fichier trajet.cpp) ------------
+
+//---------------------------------------------------------------- INCLUDE
+
+//-------------------------------------------------------- Include système
+using namespace std;
+#include <iostream>
+#define MAP
+
+//------------------------------------------------------ Include personnel
+#include "trajet.h"
+#include "trajet_simple.h"
+#include <cstring>
+
+
+//------------------------------------------------------------- Constantes
+
+//----------------------------------------------------------------- PUBLIC
+
+//----------------------------------------------------- Méthodes publiques
+// type trajet::Méthode ( liste des paramètres )
+// Algorithme :
+//
+//{
+//} //----- Fin de Méthode
 
  void Trajet_simple::Afficher(void) const
 
@@ -13,6 +39,9 @@ using namespace std;
     cout << "Arrivee : " << arrivee << endl;
     cout << "Means : " << meansOfTrans << endl;
 }
+
+
+//-------------------------------------------- Constructeurs - destructeur
 
 Trajet_simple::Trajet_simple(char * depart, char * arrivee, char * means) : Trajet(  depart,  arrivee) //Appel au constructeur de Trajet
 
@@ -25,6 +54,7 @@ Trajet_simple::Trajet_simple(char * depart, char * arrivee, char * means) : Traj
 #endif
 }
 
+
 Trajet_simple::~Trajet_simple()
 {
     delete[] meansOfTrans; 
@@ -32,4 +62,9 @@ Trajet_simple::~Trajet_simple()
     cout << "Appel au destructeur de Trajet_simple" << endl;
 #endif
 }
+
+
+//------------------------------------------------------------------ PRIVE
+
+//----------------------------------------------------- Méthodes protégées
 

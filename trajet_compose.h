@@ -34,7 +34,7 @@ public:
 
    //Méthode publique ajouter
 
-   void Ajouter(Trajet * trajet) ;
+   void Ajouter(Trajet * trajet);
 
 //-------------------------------------------- Constructeurs - destructeur
     
