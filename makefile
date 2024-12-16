@@ -1,10 +1,7 @@
 #Fichier makefile associé à notre application de voyage
 
-#Nom de l'exécutable et édition des liens
 
-trajets : trajet.o trajet_simple.o trajet_compose.o liste_chainee.o catalogue.o test.o
-	@echo "EDL de trajets"
-	g++ -o trajets trajet.o trajet_simple.o trajet_compose.o liste_chainee.o catalogue.o test.o
+
 
 #Règle explicite pour nos fichiers sources
 
@@ -27,4 +24,7 @@ liste_chainee.o : liste_chainee.cpp liste_chainee.h trajet.h
 catalogue.o : catalogue.cpp catalogue.h liste_chainee.h trajet.h
 	@echo "Compilation de catalogue"
 	g++ -c catalogue.cpp -o catalogue.o
-
+#Nom de l'exécutable et édition des liens
+trajets : trajet.o trajet_simple.o trajet_compose.o liste_chainee.o catalogue.o test.o
+	@echo "EDL de trajets"
+	g++ -o trajets trajet.o trajet_simple.o trajet_compose.o liste_chainee.o catalogue.o test.o
