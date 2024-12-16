@@ -49,7 +49,7 @@ const char * Trajet::getArrivee() const
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Trajet::Trajet(char * depart, char * arrivee)
+Trajet::Trajet(const char * depart,const char * arrivee)
 
 {
     this->depart = new char[strlen(depart) +1]; //Allocation dynamique 

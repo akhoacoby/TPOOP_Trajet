@@ -102,7 +102,7 @@ Liste_chainee::~Liste_chainee() //destruction des noeuds alloués dynamiquement 
 {
     Noeud* temp = head;
     head = head->next;
-    delete temp->trajet;
+    // delete temp->trajet;
     delete temp;
 } 
 

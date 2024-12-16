@@ -43,7 +43,7 @@ using namespace std;
 
 //-------------------------------------------- Constructeurs - destructeur
 
-Trajet_simple::Trajet_simple(char * depart, char * arrivee, char * means) : Trajet(  depart,  arrivee) //Appel au constructeur de Trajet
+Trajet_simple::Trajet_simple(char * depart, char * arrivee, char * means) : Trajet(depart,  arrivee) //Appel au constructeur de Trajet
 
 {
     //Allocation dynamique de la mémoire et copie de *means

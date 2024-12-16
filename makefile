@@ -1,30 +1,37 @@
-#Fichier makefile associé à notre application de voyage
+# Compiler and flags
+CXX = g++
+CXXFLAGS = -Wall -Wextra -std=c++11 -g  # Add -g for GDB debugging support
 
+# Source files
+SRCS = trajet.cpp trajet_simple.cpp trajet_compose.cpp liste_chainee.cpp catalogue.cpp test.cpp
 
+# Header files
+HEADERS = trajet.h trajet_simple.h trajet_compose.h liste_chainee.h catalogue.h
 
+# Object files
+OBJS = $(SRCS:.cpp=.o)
 
-#Règle explicite pour nos fichiers sources
+# Output executable
+TARGET = test
 
-trajet.o : trajet.h trajet.cpp
-	@echo " Compilation de trajet"
-	g++ -c trajet.cpp -o trajet.o
+# Default target
+all: $(TARGET)
 
-trajet_simple.o : trajet_simple.h trajet_simple.cpp trajet.h
-	@echo "Compilation de trajet_simple"
-	g++ -c trajet_simple.cpp -o trajet_simple.o
+# Rule to link the executable
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-trajet_compose.o : trajet_compose.cpp trajet_compose.h trajet.h
-	@echo "Compilation de trajet_compose"	
-	g++ -c trajet_compose.cpp -o trajet_compose.o
+# Rule to compile object files
+%.o: %.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-liste_chainee.o : liste_chainee.cpp liste_chainee.h trajet.h
-	@echo "Compilation de liste_chainee"
-	g++ -c liste_chainee.cpp -o liste_chainee.o
+# Debug target for running in GDB
+debug: $(TARGET)
+	gdb $(TARGET)
 
-catalogue.o : catalogue.cpp catalogue.h liste_chainee.h trajet.h
-	@echo "Compilation de catalogue"
-	g++ -c catalogue.cpp -o catalogue.o
-#Nom de l'exécutable et édition des liens
-trajets : trajet.o trajet_simple.o trajet_compose.o liste_chainee.o catalogue.o test.o
-	@echo "EDL de trajets"
-	g++ -o trajets trajet.o trajet_simple.o trajet_compose.o liste_chainee.o catalogue.o test.o
+# Clean rule
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+# Phony targets
+.PHONY: all debug clean

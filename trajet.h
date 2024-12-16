@@ -46,7 +46,7 @@ virtual void Afficher(void) const;
 
 //-------------------------------------------- Constructeurs - destructeur
    
-    Trajet( char * depart, char * arrivee);//constructeur de Parcours
+    Trajet(const char * depart, const char * arrivee);//constructeur de Parcours
 
     Trajet(); //constructeur par défaut
     
