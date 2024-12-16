@@ -58,7 +58,7 @@ public:
     
 
     Liste_chainee( ); //construction d'une liste chainée avec le constructeur par défaut
-
+   
     virtual ~Liste_chainee ( );
     // Mode d'emploi :
     //

@@ -86,17 +86,17 @@ void Catalogue::search()
 
     //Recueil de la ville de départ et d'arrivée
 
-    char villeDepart[Taille];
-    char villeArrivee[Taille];
+    char villeDepart[Taille] = {0};
+    char villeArrivee[Taille] = {0};
     cout << "Rentrer la ville de départ : ";
-    cin >> villeDepart;
+    cin.getline(villeDepart, Taille);
     
     cout << "Rentrer la ville d'arrivée : " ;
-    cin >> villeArrivee;
+    cin.getline(villeArrivee, Taille);
  
-    while(temp != NULL)
+    while(temp != nullptr)
 {
-    if(temp->trajet->getDepart() != NULL && temp->trajet->getArrivee() != NULL)
+    if(temp->trajet->getDepart() != nullptr && temp->trajet->getArrivee() != nullptr)
 {    
     if (strcmp(temp->trajet->getDepart(), villeDepart) == 0 && strcmp(temp->trajet->getArrivee(), villeArrivee) == 0)
 {
@@ -113,8 +113,8 @@ void Catalogue::search()
     if(!found)
 {
     cout << "Aucun trajet trouvé entre " << villeDepart << " et " << villeArrivee << endl;
+     //on retourne bien 0 si le trajet n'est pas possible 
 }
-    return ; //on retourne bien 0 si le trajet n'est pas possible 
 }
 
 /*Liste_chainee  Catalogue::search&Afficher(char * search_depart, char * search_arrivee)
@@ -136,7 +136,7 @@ void Catalogue::search()
 
 //Construction d'un catalogue
 
-Catalogue::Catalogue()  //On commence à 0
+Catalogue::Catalogue(): Liste()  //On commence à 0
 {
     #ifdef MAP 
 

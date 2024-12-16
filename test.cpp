@@ -7,38 +7,41 @@
 using namespace std;
 
 
-int main()
-{
-    Trajet* trajet1 = new Trajet("Paris", "Marseille");
+
+
+int main() {
+    // Création de trajets simples
+    Trajet* trajet1 =  new Trajet("Paris", "Marseille");
     Trajet* trajet2 = new Trajet("Lyon", "Milan");
-    Trajet* trajet3 = new Trajet("Paris", "Dakar");
+    Trajet* trajet3 =  new Trajet("Paris", "Dakar");
+
+    // Création d'un trajet composé
+    Trajet_compose* trajetCompose = new Trajet_compose();
+    trajetCompose->Ajouter(trajet2);
+    trajetCompose->Ajouter(new Trajet("Milan", "Paris"));
+
+    // Création du catalogue
+    Catalogue monCatalogue;
+
+    // Ajout des trajets au catalogue
+    monCatalogue.ajouter(trajet1);
+    monCatalogue.ajouter(trajet3);
+    monCatalogue.ajouter(trajetCompose);
+
+    // Affichage des trajets
+    cout << "Contenu du catalogue:" << endl;
+    monCatalogue.Afficher();
+
+    // Recherche de trajets
+    cout << "\nRecherche de trajets:" << endl;
+    monCatalogue.search();
+
     
-    Trajet* trajettest = new Trajet("Milan", "Paris");
-    Trajet_compose* trajet4 = new Trajet_compose();
-
-    trajet4->Ajouter(trajet2);
-    trajet4->Ajouter(trajettest);
-
-
-    Catalogue MonCatalogue; //constructeur de liste
-
-    Liste_chainee Liste = MonCatalogue.getList();
     
 
-    Liste.append(trajet1);
-    Liste.append(trajet2);
-    Liste.append(trajet3);
-
-    trajet4->Afficher();
-
-    Liste.Afficher();
-    
-    MonCatalogue.search();
-
-    delete trajet1;
-    delete trajet2;
-    delete trajet3;
     return 0;
 }
+
+
 
     

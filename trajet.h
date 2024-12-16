@@ -70,4 +70,3 @@ protected:
 //-------------------------------- Autres définitions dépendantes de <Xxx>
 
 #endif // XXX_H
-

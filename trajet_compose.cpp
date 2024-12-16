@@ -58,7 +58,15 @@ void Trajet_compose::Ajouter(Trajet * trajet)
     Liste_chainee::Noeud * temp = ListeTC.gethead();
     if(temp == NULL)
 {
-    ListeTC.Liste_chainee::append(trajet); //Si la liste est vide on peut rajouter directement
+    ListeTC.append(trajet); //Si la liste est vide on peut rajouter directement
+
+    // Définir depart et arrivee pour le trajet composé
+        depart = new char[strlen(trajet->getDepart()) + 1];
+        strcpy(depart, trajet->getDepart());
+        
+        arrivee = new char[strlen(trajet->getArrivee()) + 1];
+        strcpy(arrivee, trajet->getArrivee());
+        
     return;
 }
     while(temp->next !=NULL)
@@ -67,11 +75,16 @@ void Trajet_compose::Ajouter(Trajet * trajet)
 }
     if(!strcmp(temp->trajet->getArrivee(), trajet->getDepart()))
 {
-    ListeTC.Liste_chainee::append(trajet);
+    ListeTC.append(trajet);
+    delete [] arrivee;
+    arrivee = new char[strlen(trajet->getArrivee()) + 1];
+    strcpy(arrivee, trajet->getArrivee());
 }
     else
 {
-    cout << "Le trajet " << trajet->getDepart() << "-"<< trajet->getArrivee() << " que vous voulez ajouter n'est pas possible. " << endl;
+    cout << "Le trajet " << trajet->getDepart() << "-" 
+             << trajet->getArrivee() 
+             << " que vous voulez ajouter n'est pas possible. " << endl;
 }
     return;
 }
@@ -79,7 +92,7 @@ void Trajet_compose::Ajouter(Trajet * trajet)
 //-------------------------------------------- Constructeurs - destructeur
 
 
-Trajet_compose::Trajet_compose() //Appel au constructeur de Trajet
+Trajet_compose::Trajet_compose() : Trajet()//Appel au constructeur de Trajet
 
 {
 #ifdef MAP

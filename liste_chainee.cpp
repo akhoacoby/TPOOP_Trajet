@@ -41,16 +41,16 @@ void Liste_chainee::append(Trajet * trajet)
 {
     Liste_chainee::Noeud * nouveau = new Noeud();
     nouveau->trajet = trajet;
-    nouveau->next = NULL;
+    nouveau->next = nullptr;
     Liste_chainee::Noeud * temp = head;
-    if(temp == NULL)
+    if(head == nullptr)
 {
     head = nouveau; //La liste est vide et le nouveau est le head
     return;
 }
     else
 {
-    while(temp->next != NULL) //parcours jusqu'au dernier 
+    while(temp->next != nullptr) //parcours jusqu'au dernier 
 {
     temp = temp->next; //passe au suivant
 }
@@ -64,12 +64,12 @@ void Liste_chainee::append(Trajet * trajet)
 void Liste_chainee::Afficher(void) const
 {
     Liste_chainee::Noeud * temp = head; 
-    if (temp == NULL) //la liste chainée est vide
+    if (temp == nullptr) //la liste chainée est vide
 {
     cout << "la liste chainée est vide" << endl;
     return;
 }
-    while(temp != NULL)
+    while(temp != nullptr)
 {
     cout << "Départ : " << temp->trajet->getDepart() << endl;
     cout << "Arrivée : " << temp->trajet->getArrivee() << endl;
@@ -82,7 +82,7 @@ void Liste_chainee::Afficher(void) const
 //-------------------------------------------- Constructeurs - destructeur
 
 
-Liste_chainee::Liste_chainee( ): head(NULL)
+Liste_chainee::Liste_chainee( ): head(nullptr)
 {
     #ifdef MAP
 
@@ -91,17 +91,19 @@ Liste_chainee::Liste_chainee( ): head(NULL)
     #endif
 }
 
+
 //Destruction d'une liste chainée
 
 Liste_chainee::~Liste_chainee() //destruction des noeuds alloués dynamiquement dans la méthode append 
 {
     Noeud* temp = head;
 
-    while(head != NULL)
+    while(head != nullptr)
 {
-    temp = head->next;
-    delete head;
-    head = temp;
+    Noeud* temp = head;
+    head = head->next;
+    delete temp->trajet;
+    delete temp;
 } 
 
     #ifdef MAP
