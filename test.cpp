@@ -1,6 +1,7 @@
 #include "liste_chainee.h"
 #include "trajet.h"
 #include "trajet_compose.h"
+#include "trajet_simple.h"
 #include "catalogue.h"
 #include <cstring>
 #include <iostream>
@@ -13,10 +14,10 @@ int main() {
 
 
     // Création de trajets simples
-    Trajet TS1("Lyon", "Bordeaux");
-    Trajet TS3("Lyon", "Paris");
-    Trajet TS2_1("Lyon", "Marseille");
-    Trajet TS2_2("Marseille", "Paris");
+    Trajet_simple TS1("Lyon", "Bordeaux", "train");
+    Trajet_simple TS3("Lyon", "Paris", "auto");
+    Trajet_simple TS2_1("Lyon", "Marseille","bateau");
+    Trajet_simple TS2_2("Marseille", "Paris", "avion");
 
     // Création d'un trajet composé
     Trajet_compose TC2;
