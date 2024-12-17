@@ -13,38 +13,24 @@ int main() {
 
 
     // Création de trajets simples
-    Trajet trajet1("Paris", "Marseille");
-    Trajet trajet2("Lyon", "Milan");
-    Trajet trajet3("Paris", "Dakar");
-    Trajet trajet5("Milan", "Paris");
+    Trajet TS1("Lyon", "Bordeaux");
+    Trajet TS3("Lyon", "Paris");
+    Trajet TS2_1("Lyon", "Marseille");
+    Trajet TS2_2("Marseille", "Paris");
 
     // Création d'un trajet composé
-    Trajet_compose trajet4;
-    trajet4.Ajouter(&trajet2);
-    trajet4.Ajouter(&trajet5);
+    Trajet_compose TC2;
+    TC2.Ajouter(&TS2_1);
+    TC2.Ajouter(&TS2_2);
 
     // Création du catalogue
     Catalogue monCatalogue;
 
-    // Ajout des trajets au catalogue
-    // Données fictives pour les trajets
-    // char* departs[] = {"Lyon", "Marseille", "Bordeaux", "Toulouse", "Nice", "Lille", "Strasbourg", "Nantes", "Rennes", "Grenoble"};
-    // char* arrivees[] = {"Marseille", "Nice", "Toulouse", "Bordeaux", "Paris", "Strasbourg", "Lille", "Rennes", "Nantes", "Lyon"};
-
-    // Trajet * tab_trajet[10];
-
-    // // Allocation dynamique et création des trajets
-    // for (int i = 0; i < 10; i++) {
-    //     tab_trajet[i] = Trajet (departs[i], arrivees[i]);
-    //     monCatalogue.ajouter(*&tab_trajet[i]);
-    // }
-
     Trajet trajet6("Marseille", "Nice");
-    monCatalogue.ajouter(&trajet1);
-    monCatalogue.ajouter(&trajet2);
-    monCatalogue.ajouter(&trajet3);
-    monCatalogue.ajouter(&trajet4);
-    monCatalogue.ajouter(&trajet6);
+    monCatalogue.ajouter(&TS1);
+    monCatalogue.ajouter(&TS3);
+    monCatalogue.ajouter(&TC2);
+
     
 
     // Affichage des trajets
