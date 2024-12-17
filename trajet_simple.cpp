@@ -40,6 +40,11 @@ using namespace std;
     cout << "Means : " << meansOfTrans << endl;
 }
 
+const char * Trajet_simple::getMeansOfTrans() const
+{
+    return meansOfTrans;
+}
+
 
 //-------------------------------------------- Constructeurs - destructeur
 
@@ -62,7 +67,6 @@ Trajet_simple::~Trajet_simple()
     cout << "Appel au destructeur de Trajet_simple" << endl;
 #endif
 }
-
 
 //------------------------------------------------------------------ PRIVE
 

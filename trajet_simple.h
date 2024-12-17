@@ -37,6 +37,7 @@ public:
     // Contrat :
     //
 virtual void Afficher(void) const;
+const char * getMeansOfTrans() const;
 
 
 //-------------------------------------------- Constructeurs - destructeur

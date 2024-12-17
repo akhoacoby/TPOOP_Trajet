@@ -18,6 +18,7 @@ using namespace std;
 #define MAP 
 #include "liste_chainee.h"
 #include "trajet_compose.h"
+#include "trajet_simple.h"
 #include "trajet.h"
 #include <cstring>
 
@@ -38,17 +39,15 @@ using namespace std;
 {
     Liste_chainee::Noeud * temp = ListeTC.Liste_chainee::gethead();
 
-    cout << "Depart : " << temp->trajet->getDepart() << endl;
-
     while(temp->next != NULL)
 {
-    temp = temp->next;
-    cout << "intermediaire : " << temp->trajet->getDepart() << endl;
-}
+    
+    cout << "Depart : " << temp->trajet->getDepart() << endl;
     cout << "Arrivee : " << temp->trajet->getArrivee() << endl;
-      
-     //cout << "Depart : " << depart << endl; //affichage de depart au lieu de *depart car *depart donne le premier car
-    //cout << "Arrivee : " << arrivee << endl;
+    temp = temp->next; //On recupére le dernier élément pour vérifier que le départ de la ville suivante est l'arrivée de la ville précédente
+}   
+    cout << "Depart : " << temp->trajet->getDepart() << endl;
+    cout << "Arrivee : " << temp->trajet->getArrivee() << endl;
 }
 
 

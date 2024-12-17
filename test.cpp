@@ -27,7 +27,7 @@ int main() {
     // Création du catalogue
     Catalogue monCatalogue;
 
-    Trajet trajet6("Marseille", "Nice");
+    // Ajout des trajets au catalogue
     monCatalogue.ajouter(&TS1);
     monCatalogue.ajouter(&TS3);
     monCatalogue.ajouter(&TC2);

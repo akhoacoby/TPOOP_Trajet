@@ -11,6 +11,7 @@
 #include "liste_chainee.h"
 #define TRAJET_COMPOSE_H
 #include "trajet.h"
+#include "trajet_simple.h"
 
 //--------------------------------------------------- Interfaces utilisées
 
