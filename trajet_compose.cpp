@@ -42,12 +42,11 @@ using namespace std;
     while(temp->next != NULL)
 {
     
-    cout << "Depart : " << temp->trajet->getDepart() << endl;
-    cout << "Arrivee : " << temp->trajet->getArrivee() << endl;
+    temp->trajet->Afficher(); //On affiche le trajet simple
     temp = temp->next; //On recupére le dernier élément pour vérifier que le départ de la ville suivante est l'arrivée de la ville précédente
 }   
-    cout << "Depart : " << temp->trajet->getDepart() << endl;
-    cout << "Arrivee : " << temp->trajet->getArrivee() << endl;
+    temp->trajet->Afficher(); //On affiche le dernier trajet simple
+    return;
 }
 
 

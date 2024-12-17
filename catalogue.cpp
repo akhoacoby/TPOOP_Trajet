@@ -57,24 +57,6 @@ Liste_chainee & Catalogue::getList()
     return Liste;
 }
 
-//Méthode pour recueillir la ville de départ et d'arrivée de l'utiliateur sur l'entrée standard?
-
-/*Trajet * Catalogue::Recueil()
-{
-    char * depart;
-    char * arrivee;
-    cout << "Rentrer la ville de départ : ";
-    cin >> depart;
-    
-    cout << "Rentrer la ville d'arrivée" << endl;
-    cin >> arrivee;
-
-    Trajet * trajet = new Trajet(depart, arrivee); //Le new associéé est dans le main 
-
-    return trajet;
-    
-} 
-*/
 
 //Méthode pour rechercher un parcours
 
@@ -112,24 +94,10 @@ void Catalogue::search()
 
     if(!found)
 {
-    cout << "Aucun trajet trouvé entre " << villeDepart << " et " << villeArrivee << endl;
+    cout << "Aucun trajet trouvé entre " << villeDepart << " et " << villeArrivee << "\n" << endl;
      //on retourne bien 0 si le trajet n'est pas possible 
 }
 }
-
-/*Liste_chainee  Catalogue::search&Afficher(char * search_depart, char * search_arrivee)
-{
-    Liste_chainee List_to_print;
-    if (Catalogue::search(char * search_depart, char * search_arrivee)) //Si le trajet existe dans le catalogue
-{
-    Trajet * trajet;
-    char * depart = trajet->getDepart();
-    char * arrivee = trajet->getArrivee();
-    List_to_print.append(depart, arrivee);
-}
-
-}*/
-
 
 //-------------------------------------------- Constructeurs - destructeur
 
@@ -156,8 +124,6 @@ Catalogue::~Catalogue()
 
     #endif
 }
-
-
 
 //------------------------------------------------------------------ PRIVE
 
