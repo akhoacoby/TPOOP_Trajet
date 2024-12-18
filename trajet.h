@@ -2,7 +2,7 @@
                            Trajet  -  description
                              -------------------
     début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
+    copyright            : (C) $2024$ par $KHOA$ $DAME$
     e-mail               : $EMAIL$
 *************************************************************************/
 
@@ -18,8 +18,12 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Xxx>
+// Rôle de la classe <trajet>
 //
+// La classe Trajet est une classe abstraite qui permet de définir un trajet
+// entre deux villes. Elle contient deux attributs protégés qui sont les villes
+// de départ et d'arrivée. Elle contient également une méthode pour afficher
+// les attributs de la classe.
 //
 //------------------------------------------------------------------------
 
@@ -35,26 +39,47 @@ public:
     //
     // Contrat :
     //
-const char * getDepart() const;
 
-const char * getArrivee() const;
+    const char * getDepart() const;
+    // Mode d'emploi: 
+    // Méthode publique pour accéder à l'attribut protégé depart
+
+    // Contrat : 
+    // Aucun contrat
+
+    const char * getArrivee() const;
+    // Mode d'emploi: 
+    // Méthode publique pour accéder à l'attribut protégé arrivee
+    // Contrat : 
+    // retourne le pointeur sur l'attribut protégé arrivee
 
 
-virtual void Afficher(void) const;
-
+    virtual void Afficher(void) const;
+    // Mode d'emploi: 
+    // Méthode publique pour afficher les attributs de la classe
+    // Contrat : 
+    // Aucun contrat
 
 
 //-------------------------------------------- Constructeurs - destructeur
    
-    Trajet(const char * depart, const char * arrivee);//constructeur de Parcours
+    Trajet(const char * depart, const char * arrivee);
+    // Mode d'emploi: 
+    // Constructeur de Trajet
+    // Contrat : 
+    // Crée un trajet avec les villes de départ et d'arrivée passées en paramètres
 
-    Trajet(); //constructeur par défaut
-    
+    Trajet(); 
+    // Mode d'emploi: 
+    // Constructeur par défaut de Trajet
+    // Contrat : 
+    // Crée un trajet avec les villes de départ et d'arrivée à NULL
+
     virtual ~Trajet ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+    // Mode d'emploi :  
+    // Destructeur de Trajet
+    // Contrat :   
+    // Détruit le trajet
 
 //------------------------------------------------------------------ PRIVE
 
@@ -67,6 +92,6 @@ protected:
     
 };
 
-//-------------------------------- Autres définitions dépendantes de <Xxx>
+//-------------------------------- Autres définitions dépendantes de <trajet>
 
-#endif // XXX_H
+#endif // trajet_H

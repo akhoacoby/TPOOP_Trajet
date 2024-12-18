@@ -2,7 +2,7 @@
                            Catalogue  -  description
                              -------------------
     début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
+    copyright            : (C) $2024$ par $KHOA$ $DAME$
     e-mail               : $EMAIL$
 *************************************************************************/
 
@@ -19,9 +19,12 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Xxx>
+// Rôle de la classe <Catalogue>
 //
-//
+// Cette classe permet de gérer un catalogue de trajets
+// Elle permet d'ajouter un trajet, de l'afficher et de rechercher un trajet
+// Elle contient une liste chainée de trajets
+// 
 //------------------------------------------------------------------------
 
 class Catalogue 
@@ -36,39 +39,59 @@ public:
     // Contrat :
     //
 
-//Méthode pour afficher les trajets après recherche
+    void ajouter(Trajet *trajet); 
+    // Mode d'emploi :
+    // Permet d'ajouter un trajet dans le catalogue
+    // Contrat :
+    // Le trajet doit être alloué dynamiquement
 
-//Liste_chainee * search&Afficher(char * search_depart, char * search_arrivee);
 
- void ajouter(Trajet *trajet); //ajouter un nouveau noeud 
+    virtual void Afficher(void) const;
+    // Mode d'emploi :
+    // Permet d'afficher le catalogue
+    // Contrat :
+    // Aucun
 
 
-virtual void Afficher(void) const;
+    void search();
+    // Mode d'emploi :
+    // Permet de rechercher un trajet dans le catalogue
+    // Contrat :
+    // Aucun
 
-//Méthode pour rechercher un parcours
-void search();
+    Liste_chainee & getList();
+    // Mode d'emploi :
+    // Permet de retourner la liste chainée
+    // Contrat :
+    // Aucun
 
-Liste_chainee & getList(); //On renvoie une référence pour ne pas travailler avec une copie de Liste  
 
-    Catalogue(); //
+//-------------------------------------------- Constructeurs - destructeur
 
+    Catalogue();
+    // Mode d'emploi :
+    // Constructeur par défaut de Catalogue
+    // Contrat :
+    // Aucun
 
 
     virtual ~Catalogue( );
     // Mode d'emploi :
-    //
+    // Destructeur de Catalogue
     // Contrat :
-    //
+    // Aucun
 
 //------------------------------------------------------------------ PRIVE
 
 protected:
+//----------------------------------------------------- Méthodes protégées
 
+//----------------------------------------------------- Attributs protégés
 
     Liste_chainee Liste;
 };
 
-//-------------------------------- Autres définitions dépendantes de <Xxx>
+//-------------------------------- Autres définitions dépendantes de <catalogue>
 
 #endif // CATALOGUE_H
 

@@ -7,9 +7,6 @@
 #include <iostream>
 using namespace std;
 
-    
-
-
 int main() {
 
 
@@ -32,7 +29,6 @@ int main() {
     monCatalogue.ajouter(&TS3);
     monCatalogue.ajouter(&TC2);
 
-    
 
     // Affichage des trajets
     cout << "Contenu du catalogue:" << endl;
@@ -41,8 +37,6 @@ int main() {
     // Recherche de trajets
     cout << "\nRecherche de trajets:" << endl;
     monCatalogue.search();
-
-    
     
 
     return 0;
