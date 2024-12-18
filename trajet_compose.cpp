@@ -38,6 +38,7 @@ using namespace std;
 // Algorithme : 
 // On parcourt la liste chainée et on affiche les trajets simples
 {
+    cout << "Trajet composé : " << "\n" << endl;
     Liste_chainee::Noeud * temp = ListeTC.Liste_chainee::gethead();
 
     while(temp->next != NULL)

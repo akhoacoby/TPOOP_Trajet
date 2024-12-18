@@ -37,6 +37,7 @@ using namespace std;
 // Affiche les attributs de la classe
 
 {
+    cout << "Trajet simple : " << endl;
     cout << "Depart : " << depart << endl;                  //affichage de depart au lieu de *depart car *depart donne le premier car
     cout << "Arrivee : " << arrivee << endl;
     cout << "Means : " << meansOfTrans << endl;
