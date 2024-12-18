@@ -12,7 +12,7 @@ HEADERS = trajet.h trajet_simple.h trajet_compose.h liste_chainee.h catalogue.h
 OBJS = $(SRCS:.cpp=.o)
 
 # Output executable
-TARGET = test
+TARGET = trajets
 
 # Default target
 all: $(TARGET)
