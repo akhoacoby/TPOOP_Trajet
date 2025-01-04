@@ -120,7 +120,7 @@ void Catalogue::search()
     {
         #ifdef MAP 
 
-        cout << "Appel au constructeur par défaut de Catalogue" << endl;
+    //    cout << "Appel au constructeur par défaut de Catalogue" << endl;
 
         #endif
     } //----- Fin de Catalogue
@@ -133,7 +133,7 @@ void Catalogue::search()
         
         #ifdef MAP
 
-        cout << "Appel au destructeur de Catalogue" << endl;
+       // cout << "Appel au destructeur de Catalogue" << endl;
 
         #endif
     } //----- Fin de ~Catalogue

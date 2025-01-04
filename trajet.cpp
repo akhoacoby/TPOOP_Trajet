@@ -70,7 +70,7 @@ Trajet::Trajet(const char * depart,const char * arrivee)
     strcpy(this->arrivee, arrivee);
 #ifdef MAP
 
-cout << "Appel au constructeur de Trajet" << endl;
+//cout << "Appel au constructeur de Trajet" << endl;
 
 #endif
 } //----- Fin de Trajet 
@@ -85,7 +85,7 @@ Trajet::Trajet()
 
 #ifdef MAP
     
-    cout << "Appel au constructeur par défaut de trajet " << endl;
+//    cout << "Appel au constructeur par défaut de trajet " << endl;
 
 #endif
 } //----- Fin de Trajet
@@ -99,7 +99,7 @@ Trajet::~Trajet()
     delete[] arrivee;
 #ifdef MAP
 
-cout << "Appel au destructeur de Trajet" << endl;
+//cout << "Appel au destructeur de Trajet" << endl;
 #endif
 } //----- Fin de ~Trajet
 

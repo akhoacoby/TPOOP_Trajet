@@ -95,7 +95,7 @@ Liste_chainee::Liste_chainee( ): head(nullptr)
 {
     #ifdef MAP
 
-    cout << "Appel au constructeur par défaut de Liste_chainee" << endl;
+//    cout << "Appel au constructeur par défaut de Liste_chainee" << endl;
 
     #endif
 } //----- Fin de Liste_chainee
@@ -119,7 +119,7 @@ Liste_chainee::~Liste_chainee()
 
     #ifdef MAP
 
-    cout << "Appel au destructeur de liste chainée " << endl;
+  //  cout << "Appel au destructeur de liste chainée " << endl;
 
     #endif
 } //----- Fin de ~Liste_chainee
