@@ -81,6 +81,7 @@ void Catalogue::search()
     char villeArrivee[Taille] = {0};
 
     cout << "Rentrer la ville de départ : ";
+    cin.ignore();
     cin.getline(villeDepart, Taille);
     
     cout << "Rentrer la ville d'arrivée : ";

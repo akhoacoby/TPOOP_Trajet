@@ -15,7 +15,7 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#define MAP 
+
 #include "liste_chainee.h"
 #include "trajet_compose.h"
 #include "trajet_simple.h"

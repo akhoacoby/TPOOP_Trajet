@@ -13,7 +13,7 @@
 //-------------------------------------------------------- Include système
 using namespace std;
 #include <iostream>
-#define MAP
+
 
 //------------------------------------------------------ Include personnel
 #include "trajet.h"
