@@ -15,8 +15,7 @@ using namespace std;
 #include <iostream>
 #include <cstring>
 
-//------------------------------------------------------ Include personnel
-#define MAP 
+//------------------------------------------------------ Include personnel 
 #define Taille 100
 #include "catalogue.h"
 #include "trajet.h"
@@ -39,6 +38,11 @@ void Catalogue::Afficher(void) const
 // Algorithme :
 // On appelle la méthode afficher de liste_chainee
 {
+    if(Liste.gethead()==nullptr)
+{
+    cout<<"Le catalogue est vide"<<endl;
+    return;
+}
     Liste.Afficher(); //Appel de afficher de liste_chainee
 } //----- Fin de Méthode
 
