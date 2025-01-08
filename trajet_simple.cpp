@@ -13,7 +13,7 @@
 //-------------------------------------------------------- Include système
 using namespace std;
 #include <iostream>
-#define MAP
+
 
 //------------------------------------------------------ Include personnel
 #include "trajet.h"
@@ -63,7 +63,7 @@ Trajet_simple::Trajet_simple(char * depart, char * arrivee, char * means) : Traj
     strcpy(this->meansOfTrans, means);                      //strcpy travaille avec des pointeurs
 
 #ifdef MAP
-    cout<< "Appel au constructeur de Trajet_simple"<<endl;
+//    cout<< "Appel au constructeur de Trajet_simple"<<endl;
 #endif
 } //----- Fin de Trajet_simple
 
@@ -73,7 +73,7 @@ Trajet_simple::~Trajet_simple()
 {
     delete[] meansOfTrans; 
 #ifdef MAP
-    cout << "Appel au destructeur de Trajet_simple" << endl;
+//    cout << "Appel au destructeur de Trajet_simple" << endl;
 #endif
 } //----- Fin de ~Trajet_simple
 

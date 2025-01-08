@@ -15,8 +15,7 @@ using namespace std;
 #include <iostream>
 #include <cstring>
 
-//------------------------------------------------------ Include personnel
-#define MAP 
+//------------------------------------------------------ Include personnel 
 #define Taille 100
 #include "catalogue.h"
 #include "trajet.h"
@@ -39,6 +38,11 @@ void Catalogue::Afficher(void) const
 // Algorithme :
 // On appelle la méthode afficher de liste_chainee
 {
+    if(Liste.gethead()==nullptr)
+{
+    cout<<"Le catalogue est vide"<<endl;
+    return;
+}
     Liste.Afficher(); //Appel de afficher de liste_chainee
 } //----- Fin de Méthode
 
@@ -77,6 +81,7 @@ void Catalogue::search()
     char villeArrivee[Taille] = {0};
 
     cout << "Rentrer la ville de départ : ";
+    cin.ignore();
     cin.getline(villeDepart, Taille);
     
     cout << "Rentrer la ville d'arrivée : ";
@@ -115,7 +120,7 @@ void Catalogue::search()
     {
         #ifdef MAP 
 
-        cout << "Appel au constructeur par défaut de Catalogue" << endl;
+    //    cout << "Appel au constructeur par défaut de Catalogue" << endl;
 
         #endif
     } //----- Fin de Catalogue
@@ -128,7 +133,7 @@ void Catalogue::search()
         
         #ifdef MAP
 
-        cout << "Appel au destructeur de Catalogue" << endl;
+       // cout << "Appel au destructeur de Catalogue" << endl;
 
         #endif
     } //----- Fin de ~Catalogue

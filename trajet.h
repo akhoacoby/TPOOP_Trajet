@@ -54,7 +54,7 @@ public:
     // retourne le pointeur sur l'attribut protégé arrivee
 
 
-    virtual void Afficher(void) const;
+    virtual void Afficher(void) const = 0;
     // Mode d'emploi: 
     // Méthode publique pour afficher les attributs de la classe
     // Contrat : 

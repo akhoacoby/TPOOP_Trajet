@@ -15,7 +15,7 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#define MAP 
+
 #include "liste_chainee.h"
 #include "trajet_compose.h"
 #include "trajet_simple.h"
@@ -98,7 +98,7 @@ Trajet_compose::Trajet_compose() : Trajet()
 // Algorithme :
 {
 #ifdef MAP
-    cout<< "Appel au constructeur de Trajet_composé"<<endl;
+//    cout<< "Appel au constructeur de Trajet_composé"<<endl;
 #endif
 } //----- Fin de Trajet_compose
 
@@ -107,7 +107,7 @@ Trajet_compose::~Trajet_compose()
 // Algorithme :
 { 
 #ifdef MAP
-    cout << "Appel au destructeur de Trajet_compose" << endl;
+//    cout << "Appel au destructeur de Trajet_compose" << endl;
 #endif
 } //----- Fin de ~Trajet_compose
 
