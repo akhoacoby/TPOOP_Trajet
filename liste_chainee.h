@@ -70,6 +70,12 @@ public:
     // Contrat :
     // retourne le pointeur sur l'attribut protégé head
 
+    Noeud * getFin(Noeud * head) const;
+    // Mode d'emploi :
+    // Méthode publique pour accéder à l'attribut protégé head
+    // Contrat :
+    // retourne le pointeur sur l'attribut protégé head
+
 
 
 //-------------------------------------------- Constructeurs - destructeur

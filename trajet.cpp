@@ -40,6 +40,13 @@ void Trajet:: Afficher(void) const
 
 //Méthode publique pour accéder à l'attribut protégé depart
 
+const char * Trajet::getName() const
+//Algorithme : retourne le pointeur sur l'attribut protégé depart
+
+{
+    return nom;
+} //----- Fin de Méthode
+
 const char * Trajet::getDepart() const
 //Algorithme : retourne le pointeur sur l'attribut protégé depart
 
@@ -59,10 +66,13 @@ const char * Trajet::getArrivee() const
 
 
 
-Trajet::Trajet(const char * depart,const char * arrivee)
+Trajet::Trajet(const char * nom, const char * depart,const char * arrivee)
 //Algorithm : Constructeur de trajet
 
 {
+    this->nom = new char[strlen(nom) +1]; //Allocation dynamique 
+    strcpy(this->nom, nom);
+
     this->depart = new char[strlen(depart) +1]; //Allocation dynamique 
     strcpy(this->depart, depart);
 
@@ -80,6 +90,7 @@ Trajet::Trajet()
 //Algorithm : Constructeur par défaut de trajet
 
 {
+    nom = NULL;
     depart = NULL;
     arrivee = NULL;
 
@@ -95,6 +106,7 @@ Trajet::~Trajet()
 //Algorithm : Destructeur de trajet
 
 {
+    delete[] nom;
     delete[] depart;
     delete[] arrivee;
 #ifdef MAP

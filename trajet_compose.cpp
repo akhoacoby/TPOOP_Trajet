@@ -34,11 +34,11 @@ using namespace std;
 //{
 //} //----- Fin de Méthode
 
- void Trajet_compose::Afficher(void) const
+void Trajet_compose::Afficher(void) const
 // Algorithme : 
 // On parcourt la liste chainée et on affiche les trajets simples
 {
-    cout << "Trajet composé : " << "\n" << endl;
+    cout << "Trajet compose " << nom <<": \n" << endl;
     Liste_chainee::Noeud * temp = ListeTC.Liste_chainee::gethead();
 
     while(temp->next != NULL)
@@ -52,7 +52,7 @@ using namespace std;
 
 
 
-void Trajet_compose::Ajouter(Trajet * trajet)
+void Trajet_compose::Ajouter(Trajet_simple * trajet)
 // Algorithme : 
 // On vérifie si la liste chainée est vide, 
 // si c'est le cas on peut ajouter directement le trajet simple
@@ -93,15 +93,13 @@ void Trajet_compose::Ajouter(Trajet * trajet)
 
 //-------------------------------------------- Constructeurs - destructeur
 
-
-Trajet_compose::Trajet_compose() : Trajet()
-// Algorithme :
+Trajet_compose::Trajet_compose(char * nom, Liste_chainee * ListeTS) : Trajet(nom,ListeTS->gethead()->trajet->getDepart(),ListeTS->getFin(ListeTS->gethead())->trajet->getArrivee())
 {
+    ListeTC = * ListeTS;
 #ifdef MAP
 //    cout<< "Appel au constructeur de Trajet_composé"<<endl;
 #endif
-} //----- Fin de Trajet_compose
-
+}
 
 Trajet_compose::~Trajet_compose()
 // Algorithme :

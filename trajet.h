@@ -40,6 +40,13 @@ public:
     // Contrat :
     //
 
+    const char * getName() const;
+    // Mode d'emploi: 
+    // Méthode publique pour accéder à l'attribut protégé nom
+
+    // Contrat : 
+    // Aucun contrat
+
     const char * getDepart() const;
     // Mode d'emploi: 
     // Méthode publique pour accéder à l'attribut protégé depart
@@ -63,7 +70,7 @@ public:
 
 //-------------------------------------------- Constructeurs - destructeur
    
-    Trajet(const char * depart, const char * arrivee);
+    Trajet(const char * nom, const char * depart, const char * arrivee);
     // Mode d'emploi: 
     // Constructeur de Trajet
     // Contrat : 
@@ -89,6 +96,7 @@ protected:
 //----------------------------------------------------- Attributs protégés
      char * depart;
      char * arrivee;
+     char * nom;
     
 };
 

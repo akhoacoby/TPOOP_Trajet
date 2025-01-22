@@ -28,7 +28,7 @@
 //
 //------------------------------------------------------------------------
 
-class Trajet_compose : public Trajet
+class Trajet_compose : public Trajet, Liste_chainee
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -41,7 +41,7 @@ public:
     // Contrat :
     // Aucun contrat
 
-   void Ajouter(Trajet * trajet);
+   void Ajouter(Trajet_simple * trajet);
     // Mode d'emploi :
     // Ajoute un trajet simple à la liste chainee
     // Contrat :
@@ -49,7 +49,7 @@ public:
 
 //-------------------------------------------- Constructeurs - destructeur
     
-    Trajet_compose(); 
+    Trajet_compose(char * nom, Liste_chainee * ListeTC); 
     // Mode d'emploi :
     // Constructeur de trajet composé par défaut
     // Contrat :

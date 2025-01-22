@@ -37,7 +37,7 @@ using namespace std;
 // Affiche les attributs de la classe
 
 {
-    cout << "Trajet simple : " << endl;
+    cout << "Trajet simple " << nom << " : " << endl;
     cout << "Depart : " << depart << endl;                  //affichage de depart au lieu de *depart car *depart donne le premier car
     cout << "Arrivee : " << arrivee << endl;
     cout << "Means : " << meansOfTrans << endl;
@@ -54,7 +54,7 @@ const char * Trajet_simple::getMeansOfTrans() const
 
 //-------------------------------------------- Constructeurs - destructeur
 
-Trajet_simple::Trajet_simple(char * depart, char * arrivee, char * means) : Trajet(depart,  arrivee)
+Trajet_simple::Trajet_simple(char * nom, char * depart, char * arrivee, char * means) : Trajet(nom, depart, arrivee)
 //Algorithme : 
 //Appel au constructeur de Trajet pour initialiser les attributs de la classe mère
 {

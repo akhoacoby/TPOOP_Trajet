@@ -76,15 +76,27 @@ void Liste_chainee::Afficher(void) const
     return;
 }
     while(temp != nullptr)                                  //parcours de la liste chainée
-{
-    cout << "Départ : " << temp->trajet->getDepart() << endl;
-    cout << "Arrivée : " << temp->trajet->getArrivee() << endl;
-    cout << endl;
+{   
+    temp->trajet->Afficher();
     temp = temp->next;
 }
     return;
 } //----- Fin de Méthode
 
+
+Liste_chainee::Noeud * Liste_chainee::getFin(Noeud * head) const
+{
+    if (head == nullptr) {
+        return nullptr;  // Si la liste est vide, retourner nullptr
+    }
+
+    Noeud * current = head;
+    while (current->next != nullptr) {  // Parcourir jusqu'au dernier nœud
+        current = current->next;
+    }
+
+    return current;  // Retourner le dernier nœud
+}
 
 //-------------------------------------------- Constructeurs - destructeur
 

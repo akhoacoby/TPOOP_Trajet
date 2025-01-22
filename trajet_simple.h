@@ -20,8 +20,7 @@ using namespace std;
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <traject_simple
-//>
+// Rôle de la classe <traject_simple>
 // Cette classe permet de créer un trajet simple, 
 // c'est à dire un trajet qui comporte un point du depart, un point d'arriver et un seul moyen de transport
 // Elle hérite de la classe Trajet
@@ -55,7 +54,7 @@ public:
 
 //-------------------------------------------- Constructeurs - destructeur
 
-    Trajet_simple(char * depart, char * arrivee, char * meansOfTrans);
+    Trajet_simple(char * nom, char * depart, char * arrivee, char * meansOfTrans);
     // Mode d'emploi :
     // Crée un trajet simple avec un point de départ, un point d'arrivée et un moyen de transport
     // Contrat :
