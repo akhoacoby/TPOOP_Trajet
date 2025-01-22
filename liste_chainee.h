@@ -76,7 +76,11 @@ public:
     // Contrat :
     // retourne le pointeur sur l'attribut protégé head
 
-
+    int compterNoeud() const;
+    // Mode d'emploi :
+    // Compter la quantite des noeuds dans une liste
+    // Contrat :
+    // retourne la valeur des noeuds
 
 //-------------------------------------------- Constructeurs - destructeur
 

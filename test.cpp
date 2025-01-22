@@ -160,7 +160,7 @@ int main()
         cout<<"\nChoisir la scenario"<<endl;
         cout<<"-----------------------------------------------------------"<<endl;
         cout<<"71. Tous les trajets" << endl;
-        cout<<"72. Selon le type de trajets (simple (S) ou compose (C)) (indisponible)"<<endl;
+        cout<<"72. Selon le type de trajets (simple (S) ou compose (C)) "<<endl;
         cout<<"73. Selon la ville (depart/arrive) (indisponible)"<<endl;
         cout<<"74. Selon une selection du trajets (indisponible)"<<endl;
 
@@ -179,30 +179,118 @@ int main()
 {
         outFile << "la liste chainee est vide" << endl;
 }
-        while(temp != nullptr)                                  //parcours de la liste chainée
-        {
-        
-        // if (typeid(temp) == typeid(Trajet_simple))
-// {
-        cout << typeid(temp->trajet).name();
-        outFile << "1:" << endl;
-        outFile << temp->trajet->getDepart() << "%";
-        outFile << temp->trajet->getArrivee() << ",";
-        // outFile << temp->trajet->getMeansofTrans() <<".";
-        outFile << endl << ";" << endl;
+        while (temp != nullptr) // parcours de la liste chaînée
+{
+        Trajet_simple* trajetSimple = dynamic_cast<Trajet_simple*>(temp->trajet);
+        Trajet_compose* trajetCompose = dynamic_cast<Trajet_compose*>(temp->trajet);
 
-        cout << "1:" << endl;
-        cout << temp->trajet->getDepart() << "%";
-        cout << temp->trajet->getArrivee() << ",";
-        // cout << temp->trajet->getMeansofTrans() <<".";
-        cout << endl << ";" << endl;
-// }
+        if (trajetSimple != nullptr) // Si c'est un Trajet_simple
+{
+                outFile << "1:" << endl;
+                outFile << trajetSimple->getDepart() << "%";
+                outFile << trajetSimple->getArrivee() << ",";
+                outFile << trajetSimple->getMeansOfTrans() << "." << endl << ";" << endl;
+
+}
+        else if (trajetCompose != nullptr) // Si c'est un Trajet_compose
+{
+                outFile << (*trajetCompose).compterNoeudTC() << ":" << endl;
+
+        // Parcourir la liste interne de Trajet_compose
+        Liste_chainee::Noeud * sousTemp = (*trajetCompose).getListeTC().gethead();
+        while (sousTemp != nullptr)
+        {
+            Trajet_simple* sousTrajet = dynamic_cast<Trajet_simple*>(sousTemp->trajet);
+            if (sousTrajet != nullptr)
+            {
+
+                outFile << sousTrajet->getDepart() << "%";
+                outFile << sousTrajet->getArrivee() << ",";
+                outFile << sousTrajet->getMeansOfTrans() << "." << endl;
+            }
+            sousTemp = sousTemp->next;
+        }
+        
+        outFile << ";" << endl;
+}
+        else // En cas d'objet inconnu
+        {
+                cout << "Type: Inconnu" << endl;
+        }
+
         temp = temp->next;
 }
+        cout << "Le catalogue est bien sauvegarde par le choix 71 !" <<endl;
         outFile.flush();
         outFile.close();
+
+        break;
 }
+        case 72:
+        {
+                char choix_type;
+                cout << "\nSelectionner le type (S -> simple || C -> Compose): " << endl;
+                cin >> choix_type;
+                toupper(choix_type);
+                Liste_chainee::Noeud * temp = MonCatalogue.getList().gethead(); 
+
+        if (choix_type != 'S' && choix_type != 'C')                                    //Choix invalid
+{
+        cerr << "Erreur : Choix invalide. Entrez 'S' ou 'C'." << endl;
+        break;
+}
+        while (temp != nullptr) // parcours de la liste chaînée
+{
+        Trajet_simple* trajetSimple = dynamic_cast<Trajet_simple*>(temp->trajet);
+        Trajet_compose* trajetCompose = dynamic_cast<Trajet_compose*>(temp->trajet);
+
+        if ( choix_type == 'S' && trajetSimple != nullptr  ) // Si on sauvegarde seulement un Trajet_simple
+{
+                outFile << "1:" << endl;
+                outFile << trajetSimple->getDepart() << "%";
+                outFile << trajetSimple->getArrivee() << ",";
+                outFile << trajetSimple->getMeansOfTrans() << "." << endl << ";" << endl;
+
+}
+        else if (choix_type == 'C' && trajetCompose != nullptr) // Si on sauvegarde seulement un Trajet_compose
+{
+                outFile << (*trajetCompose).compterNoeudTC() << ":" << endl;
+
+        // Parcourir la liste interne de Trajet_compose
+        Liste_chainee::Noeud * sousTemp = (*trajetCompose).getListeTC().gethead();
+        while (sousTemp != nullptr)
+        {
+            Trajet_simple* sousTrajet = dynamic_cast<Trajet_simple*>(sousTemp->trajet);
+            if (sousTrajet != nullptr)
+            {
+
+                outFile << sousTrajet->getDepart() << "%";
+                outFile << sousTrajet->getArrivee() << ",";
+                outFile << sousTrajet->getMeansOfTrans() << "." << endl;
+            }
+            sousTemp = sousTemp->next;
+        }
+        
+        outFile << ";" << endl;
+}
+        temp = temp->next;
+}
+        cout << "Le catalogue est bien sauvegarde par le choix 72 !" <<endl;
+        outFile.flush();
+        outFile.close();
                 break;
+        }
+
+        case 73:
+        {
+                break;
+        }
+
+        case 74:
+        {
+                break;
+
+        }
 
         default:
         {

@@ -51,6 +51,13 @@ void Trajet_compose::Afficher(void) const
 } //----- Fin de Méthode
 
 
+Liste_chainee & Trajet_compose:: getListeTC()
+// Algorithme : 
+// Retourner la liste de trajet compose
+// 
+{
+    return ListeTC;
+}//----- Fin de Méthode
 
 void Trajet_compose::Ajouter(Trajet_simple * trajet)
 // Algorithme : 
@@ -90,6 +97,11 @@ void Trajet_compose::Ajouter(Trajet_simple * trajet)
 }
     return;
 } //----- Fin de Méthode
+
+int Trajet_compose::compterNoeudTC() const
+{
+    return ListeTC.compterNoeud();
+}
 
 //-------------------------------------------- Constructeurs - destructeur
 

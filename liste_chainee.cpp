@@ -98,6 +98,18 @@ Liste_chainee::Noeud * Liste_chainee::getFin(Noeud * head) const
     return current;  // Retourner le dernier nœud
 }
 
+// Méthode pour compter les nœuds
+int Liste_chainee::compterNoeud() const 
+    {
+        int count = 0;
+        Noeud * temp = head;
+        while (temp != nullptr) {
+            count++;
+            temp = temp->next;
+        }
+        return count;
+    }
+
 //-------------------------------------------- Constructeurs - destructeur
 
 

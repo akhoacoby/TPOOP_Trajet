@@ -47,6 +47,14 @@ public:
     // Contrat :
     // Aucun contrat
 
+    Liste_chainee  & getListeTC();
+    // Mode d'emploi :
+    // Retourner la liste chainee de trajet compose
+    // Contrat :
+    // Aucun contrat
+
+    int compterNoeudTC() const;
+
 //-------------------------------------------- Constructeurs - destructeur
     
     Trajet_compose(char * nom, Liste_chainee * ListeTC); 
